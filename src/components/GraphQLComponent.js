@@ -8,7 +8,29 @@ class GraphQLComponent extends React.Component {
         super();
         this.state = {
           result: "Press the button to view the result",
-          query: `query { Lift(id: "panorama") { name status }}`
+          query: `query {
+            Country(alpha2Code: "SE") {
+              name
+              nativeName
+              population
+              convertedArea(areaUnit: SQUARE_MILES) {
+                populationDensity
+              }
+              capital
+              location {
+                latitude
+                longitude
+              }
+              currencies {
+                name
+                symbol
+              }
+              flag {
+                emoji
+                svgFile
+              }
+            }
+          }`
         };
         this.launchQuery = this.launchQuery.bind(this)
     }
