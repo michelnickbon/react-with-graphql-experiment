@@ -6,21 +6,34 @@ class GraphQLComponent extends React.Component {
 
     constructor() {
         super();
-        this.result = null;
-        this.query = `query { Lift(id: "panorama") { name status }}`;
+        this.state = {
+          result: "va",
+          query: `query { Lift(id: "panorama") { name status }}`
+        };
+        this.launchQuery = this.launchQuery.bind(this)
     }
 
-    async componentDidMount() {
-        const result = await GraphQLManager.GetGraphQLData(this.query);
-        console.log(result);
+    async launchQuery() {
+      const result = await GraphQLManager.GetGraphQLData(this.state.query);
+      this.setState({ result: JSON.stringify(result, null, 2) });
     }
 
     render() {
         return (
           <div className="container">
-            <h1>Hello there!</h1>
-            <p> - Lets try some GraphQL! </p>
-            <Button variant="contained" color="primary" disableElevation> Run GraphQL query </Button>
+            <div className="intro"> 
+              <h1>Hello there :-)</h1>
+              <p> - Lets try some GraphQL! </p>
+            </div>
+            <div className="query">
+              <p> {this.state.query} </p>
+            </div>
+            <div className="button">
+              <Button onClick={this.launchQuery} variant="contained" color="primary" disableElevation> Run GraphQL query </Button>
+            </div>
+            <div className="result">
+              {this.state.result}
+            </div>
           </div>
         );
     }

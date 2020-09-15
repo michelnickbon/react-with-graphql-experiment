@@ -12,5 +12,17 @@ p {
 
 .container {
     width: 600px;
-    padding: 30px;
+    padding: 50px 0px 0px 80px;
+}
+
+.intro {
+    margin: 0px 0px 30px 0px;
+}
+
+.query {
+    margin: 0px 0px 20px 0px;
+}
+
+.button {
+    margin: 0px 0px 20px 0px;
 }
