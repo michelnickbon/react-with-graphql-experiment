@@ -1,6 +1,6 @@
 import React from 'react';
 import GraphQLComponent from "./components/GraphQLComponent"
-import './App.css';
+import '../src/styles/main.css';
 
 function App() {
   return (

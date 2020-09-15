@@ -1,5 +1,6 @@
 import React from 'react';
 import GraphQLManager from '../assets/GraphQLManager';
+import { Button } from '@material-ui/core';
 
 class GraphQLComponent extends React.Component {
 
@@ -15,7 +16,13 @@ class GraphQLComponent extends React.Component {
     }
 
     render() {
-        return <h2>Hello there! Lets try some GraphQL</h2>;
+        return (
+          <div className="container">
+            <h1>Hello there!</h1>
+            <p> - Lets try some GraphQL! </p>
+            <Button variant="contained" color="primary" disableElevation> Run GraphQL query </Button>
+          </div>
+        );
     }
 }
 
