@@ -1,5 +1,3 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-
 # Quick GraphQL experiment using React
 Just a playground project experimenting with GraphQL API:s  
 Plenty of open GraphQL API:s can be found at [https://github.com/APIs-guru/graphql-apis](https://github.com/APIs-guru/graphql-apis) !
