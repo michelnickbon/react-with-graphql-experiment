@@ -1,7 +1,10 @@
 import React from 'react';
 import GraphQLManager from '../services/GraphQLManager';
 import SampleQuery from '../assets/SampleQuery';
-import { Button } from '@material-ui/core';
+import Result from './Result';
+import QueryView from './QueryView';
+import Header from './Header';
+import QueryButton from './QueryButton';
 
 class GraphQLComponent extends React.Component {
 
@@ -9,6 +12,8 @@ class GraphQLComponent extends React.Component {
       super();
       this.state = {
         result: "Press the button to view the result",
+        title: "Hello there :-)",
+        description: "- Lets try some GraphQL!",
         query: null
       };
       this.launchQuery = this.launchQuery.bind(this)
@@ -28,19 +33,10 @@ class GraphQLComponent extends React.Component {
     render() {
         return (
           <div className="container">
-            <div className="intro"> 
-              <h1>Hello there :-)</h1>
-              <p> - Lets try some GraphQL! </p>
-            </div>
-            <div className="button">
-              <Button onClick={this.launchQuery} variant="contained" color="primary" disableElevation> Run GraphQL query </Button>
-            </div>
-            <div className="query">
-              <p> {this.state.query} </p>
-            </div>
-            <div className="result">
-              {this.state.result}
-            </div>
+            <Header title={this.state.title} description={this.state.description} />
+            <QueryButton launchQuery={this.launchQuery} label="Run GraphQL query"/>
+            <QueryView query={this.state.query} />
+            <Result result={this.state.result} />
           </div>
         );
     }
