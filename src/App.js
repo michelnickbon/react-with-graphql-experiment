@@ -1,11 +1,11 @@
 import React from 'react';
-import GraphQLComponent from "./components/GraphQLComponent"
+import Main from "./components/Main"
 import '../src/styles/main.css';
 
 function App() {
   return (
     <div className="App">
-      <GraphQLComponent />
+      <Main />
     </div>
   );
 }

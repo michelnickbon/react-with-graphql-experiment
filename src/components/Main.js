@@ -6,7 +6,7 @@ import QueryView from './QueryView';
 import Header from './Header';
 import QueryButton from './QueryButton';
 
-class GraphQLComponent extends React.Component {
+class Main extends React.Component {
 
     constructor() {
       super();
@@ -42,4 +42,4 @@ class GraphQLComponent extends React.Component {
     }
 }
 
-export default GraphQLComponent;
+export default Main;
