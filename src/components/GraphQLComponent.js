@@ -1,45 +1,28 @@
 import React from 'react';
 import GraphQLManager from '../services/GraphQLManager';
+import SampleQuery from '../assets/SampleQuery';
 import { Button } from '@material-ui/core';
 
 class GraphQLComponent extends React.Component {
 
     constructor() {
-        super();
-        this.state = {
-          result: "Press the button to view the result",
-          query: `query {
-            Country(alpha2Code: "SE") {
-              name
-              nativeName
-              population
-              convertedArea(areaUnit: SQUARE_MILES) {
-                populationDensity
-              }
-              capital
-              location {
-                latitude
-                longitude
-              }
-              currencies {
-                name
-                symbol
-              }
-              flag {
-                emoji
-                svgFile
-              }
-            }
-          }`
-        };
-        this.launchQuery = this.launchQuery.bind(this)
+      super();
+      this.state = {
+        result: "Press the button to view the result",
+        query: null
+      };
+      this.launchQuery = this.launchQuery.bind(this)
+    }
+
+    componentDidMount() {
+      this.setState({ query: SampleQuery.query})
     }
 
     // Launch GraphQL query
     async launchQuery() {
       this.setState({ result: "Loading..." });
-      const result = await GraphQLManager.GetGraphQLData(this.state.query);
-      this.setState({ result: JSON.stringify(result, null, 2) });
+      const data = await GraphQLManager.GetGraphQLData(this.state.query);
+      this.setState({ result: JSON.stringify(data) });
     }
 
     render() {
