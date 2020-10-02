@@ -5,17 +5,17 @@ class QueryButton extends React.Component {
 
   constructor() {
     super();
-    this.launchQuery = this.handleLaunchQuery.bind(this);
+    this.handleLaunchQuery = this.handleLaunchQuery.bind(this);
   }
 
-  handleLaunchQuery(evt) {
-    this.props.launchQuery(this.props.value);
+  handleLaunchQuery() {
+    this.props.launchQuery();
   }
 
   render() {
     return (
       <div className="button">
-        <Button onClick={this.launchQuery} variant="contained" color="primary" disableElevation> {this.props.label} </Button>
+        <Button onClick={this.handleLaunchQuery} variant="contained" color="primary" disableElevation> {this.props.label} </Button>
       </div>
     );
   }

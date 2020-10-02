@@ -16,7 +16,6 @@ class Main extends React.Component {
         description: "- Lets try some GraphQL!",
         query: null
       };
-      this.launchQuery = this.launchQuery.bind(this)
     }
 
     componentDidMount() {
@@ -34,7 +33,7 @@ class Main extends React.Component {
         return (
           <div className="container">
             <Header title={this.state.title} description={this.state.description} />
-            <QueryButton launchQuery={this.launchQuery} label="Run GraphQL query"/>
+            <QueryButton launchQuery={() => this.launchQuery()} label="Run GraphQL query"/>
             <QueryView query={this.state.query} />
             <Result result={this.state.result} />
           </div>
