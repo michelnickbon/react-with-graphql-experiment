@@ -1,5 +1,5 @@
 import React from 'react';
-import GraphQLManager from '../assets/GraphQLManager';
+import GraphQLManager from '../services/GraphQLManager';
 import { Button } from '@material-ui/core';
 
 class GraphQLComponent extends React.Component {
