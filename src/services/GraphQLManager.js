@@ -9,10 +9,6 @@ const GraphQLManager = {
         } catch (error) {
             console.log(error);
         }
-    },
-
-    LoadSampleQuery: function() {
-        return process.env.REACT_APP_SAMPLE_QUERY;
     }
 }
 
